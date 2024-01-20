@@ -1,0 +1,25 @@
+[package]
+name = "collatz-problem-tester"
+version = "0.1.0"
+authors = ["XDream8 <WolfsDream@proton.me>"]
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+repository = "https://codeberg.org/XDream8/collatz-problem-tester"
+description = "Just a minimal tester for collatz conjecture"
+
+[dependencies]
+num-bigint = { version = "0.4.4", features = [ "rand" ] }
+num-traits = "0.2.17"
+rand = "0.8.5"
+seahorse = "2.2.0"
+
+[profile.release]
+lto = "thin"
+
+[profile.optimized]
+inherits = "release"
+lto = "fat"
+codegen-units = 1
+strip = true
+opt-level = 3
