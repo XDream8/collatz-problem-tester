@@ -88,6 +88,8 @@ fn action(c: &Context) {
         }
     };
 
+    println!("Number: {input_number}");
+
     let mut tries: BigUint = BigUint::zero();
 
     // to avoid repeated computations
@@ -149,7 +151,7 @@ fn verbose_printing(tries: &BigUint, number: &BigUint) {
 }
 
 #[inline(always)]
-fn regular_printing(tries: &BigUint, _number: &BigUint) {
+fn regular_printing(tries: &BigUint, _: &BigUint) {
     print!("\rTries: {tries}");
     io::stdout().flush().unwrap();
 }
